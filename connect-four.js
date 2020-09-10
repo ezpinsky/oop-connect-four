@@ -1,4 +1,4 @@
-import Game from './game.js';
+import Game from "./game.js";
 
 var game = undefined;
 
@@ -7,8 +7,8 @@ function updateUI() {
 	if (game === undefined) {
 		boardHolder.classList.add("is-invisible");
 	} else {
-        boardHolder.classList.remove("is-invisible");
-        document.getElementById("game-name").innerHTML = game.getName()
+		boardHolder.classList.remove("is-invisible");
+		document.getElementById("game-name").innerHTML = game.getName();
 	}
 }
 
