@@ -26,12 +26,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 	const newGame = document.getElementById("new-game");
 	const players = document.getElementById("form-holder");
 	const player1 = document.getElementById("player-1-name");
-	const player2 = document.getElementById("player-2-name");
+    const player2 = document.getElementById("player-2-name");
 
 	document.getElementById("click-targets").addEventListener("click", (e) => {
-		let column0 = new Column(0);
 		updateUI(e.currentTarget);
-		column0.add(game.currentPlayer);
 		game.playInColumn();
 	});
 
@@ -49,6 +47,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 		player1.value = "";
 		player2.value = "";
 		newGame.disabled = true;
-		updateUI();
+        updateUI();
+
 	});
 });

@@ -1,8 +1,9 @@
 export default class Game {
-	constructor(player1, player2, currentPlayer = 1) {
+	constructor(player1, player2, currentPlayer = 1, columns) {
 		this.player1 = player1;
 		this.player2 = player2;
-		this.currentPlayer = currentPlayer;
+        this.currentPlayer = currentPlayer;
+        this.columns = columns;
 	}
 
 	getName() {
