@@ -8,7 +8,6 @@ export default class ColumnWinInspector {
 	inspect() {
 		let tokenCount = 0;
 		let winningPlayer = 1;
-		
 		if (this.Column.tokens[3] !== null) {
 			for (let i = 5; i >= 0; i--) {
 				let token = this.Column.tokens[i];
