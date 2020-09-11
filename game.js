@@ -21,6 +21,10 @@ export default class Game {
 	getName() {
 		if (this.winnerNumber === 3) {
 			return `${this.player1} ties with ${this.player2}!!@`;
+		}else if(this.winnerNumber === 1){
+			return `${this.player1} Wins!!@`
+		}else if(this.winnerNumber === 2){
+			return `${this.player2} Wins!!@`
 		}
 		return `${this.player1} vs. ${this.player2}`;
 	}
@@ -37,6 +41,9 @@ export default class Game {
 				break;
 		}
 		this.checkForTie();
+		this.checkForColumnWin();
+
+
 	}
 
 	checkForTie() {
@@ -47,10 +54,28 @@ export default class Game {
 	}
 
 	isColumnFull(columnIndex) {
+		if(this.winnerNumber === 1 || this.winnerNumber === 2){
+			return true
+		}
+
 		return this.columns[columnIndex].isFull();
 	}
 
 	getTokenAt(rowIndex, columnIndex) {
 		return this.columns[columnIndex].getTokenAt(rowIndex);
+	}
+
+	checkForColumnWin(){
+		if(this.winnerNumber !== 0){
+			return;
+		}
+
+		for(let i=0; i<=6; i++){
+			let ColumnInspector = new ColumnWinInspector(this.columns[i]);
+			if(ColumnInspector.inspect() > 0){
+				this.winnerNumber = ColumnInspector.inspect();
+				return;
+			}
+		}
 	}
 }
