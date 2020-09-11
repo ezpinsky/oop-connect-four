@@ -33,7 +33,12 @@ export default class Game {
 		}
 	}
 
+	isColumnFull(columnIndex){
+		return this.columns[columnIndex].isFull()
+	}
+
 	getTokenAt(rowIndex, columnIndex) {
 		return this.columns[columnIndex].getTokenAt(rowIndex);
 	}
+
 }

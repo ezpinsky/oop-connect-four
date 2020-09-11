@@ -15,4 +15,10 @@ export default class Column {
 	getTokenAt(rowIndex) {
 		return this.tokens[rowIndex];
 	}
+
+	isFull(){
+		if(this.tokens[0] !== null){
+			return true;
+		}
+	}
 }
