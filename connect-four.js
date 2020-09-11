@@ -31,7 +31,7 @@ function updateUI(placePieceSpot) {
 		document.getElementById("game-name").innerHTML = game.getName();
 	}
 	if (placePieceSpot !== undefined) {
-		if (game.currentPlayer === 1) {
+		if (game.currentPlayer === 2) {
 			placePieceSpot.classList.remove("black");
 			placePieceSpot.classList.add("red");
 		} else {
@@ -48,9 +48,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 	const player2 = document.getElementById("player-2-name");
 
 	document.getElementById("click-targets").addEventListener("click", (e) => {
-		updateUI(e.currentTarget);
 		let columnIndex = Number.parseInt(e.target.id[7]);
 		game.playInColumn(columnIndex);
+		updateUI(e.currentTarget);
 	});
 
 	players.addEventListener("keyup", (e) => {
